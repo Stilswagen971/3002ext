@@ -1,0 +1,6 @@
+# sends an OccupancyGrid and returns the cspace
+
+#map
+nav_msgs/OccupancyGrid mapdata
+---
+nav_msgs/OccupancyGrid cspace

@@ -1,0 +1,7 @@
+# get a list of frontier centriods
+
+#map
+nav_msgs/OccupancyGrid map
+---
+# list of frontier centroids
+geometry_msgs/Point[] centroids

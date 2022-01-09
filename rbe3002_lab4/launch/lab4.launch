@@ -1,0 +1,17 @@
+<launch>
+
+    <!-- <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch"/> -->
+    <!-- <include file="$(find turtlebot3_bringup)/launch/turtlebot3_model.launch"/> -->
+    <include file="$(find rbe3002_lab4)/launch/lab4_customrviz.launch"/>
+    <include file="$(find rbe3002_final)/launch/maze_sim.launch"/>
+    <!-- <include file="$(find turtlebot3_slam)/launch/turtlebot3_slam.launch"/> -->
+    <arg name="slam_methods" value="gmapping" />
+    <node name = "lab4" pkg = "rbe3002_lab4" type = "lab4.py" />
+
+    <node name = "lab3" pkg = "rbe3002_lab3" type = "path_planner.py" />
+    <node name = "lab2" pkg = "rbe3002_lab2" type = "lab2.py" />
+    <node name = "cspace" pkg = "rbe3002_lab3" type = "cspace.py" />
+    <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rbe3002_lab4)/rviz/lab4.rviz"/> -->
+    <node name = "exec_node" pkg = "rbe3002_lab4" type = "exec_node.py" />
+
+</launch>

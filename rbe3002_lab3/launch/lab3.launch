@@ -1,0 +1,11 @@
+<launch>
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch"/>
+    <include file="$(find rbe3002_lab3)/launch/customrviz_lab3.launch"/>
+    <arg name="map_file" default="$(find rbe3002_lab3)/maps/simple_map.yaml"/>
+    <node name = "transform" pkg = "tf" type = "static_transform_publisher" args = "0 0 0 0 0 0  /map /odom 100"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+    <node name = "lab3" pkg = "rbe3002_lab3" type = "path_planner.py" />
+    <node name = "lab2" pkg = "rbe3002_lab2" type = "lab2.py" />
+
+</launch>

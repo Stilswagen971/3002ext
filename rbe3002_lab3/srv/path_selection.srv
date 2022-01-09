@@ -1,0 +1,8 @@
+# takes a list of centriods as points and returns a path
+
+#list of centriods
+geometry_msgs/Point[] centroids
+nav_msgs/OccupancyGrid mapdata
+---
+# returns a path to the frontier centroid
+nav_msgs/Path path
